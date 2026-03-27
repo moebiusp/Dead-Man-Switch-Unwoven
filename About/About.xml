@@ -5,7 +5,7 @@
   <author>Moebius</author>
   <supportedVersions>
     <li>1.6</li>
-  </supportedVersions>
+  </supportedVersions>  
   <modDependencies>
     <li>
       <packageId>Aoba.DeadManSwitch.Core</packageId>
@@ -13,17 +13,25 @@
       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3121742525</steamWorkshopUrl>
     </li>
   </modDependencies>
-  <description>Core rebalancing module for Dead Man's Switch and some of its submods. 
+  <description> This is mod is in pre-beta, a series of personal experiments that may or may not evolve to a proper something. Subscribe at your own risk! 
+
+    Rebalance for Dead Man's Switch and some of its submods. 
+
     - Removes quality variance from weapons and armor (but not some apparels) 
     - Add Refurbishment recipe for repairing the weapons and armor above mentioned
     - Add waste generation to all automated buildings
-    - Add Nuclear Battery to some traders (instead of rare loot only), still rare
+    - Add Nuclear Battery to some traders (instead of rare loot only)
 
     Roadmap
     - Improve recipes and research
     - Hide redundant items
-    - New Ideo
+    - New Ideology
+    - Several improvements to Dragoons and Ancients
     - A LOT more
+
+  ALl silly lil xml patches coded by me
+  DMS is an amazing series of mods, all credits to Aoba and team.
+
   </description>
   <loadAfter>
     <li>Aoba.DeadManSwitch.Core</li>
