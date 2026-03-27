@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Add 1 Wastepack to every recipe that can run on:
+	     DMS_Furnace, DMS_ReactionChamber, or DMS_TableMachinePrinter -->
+
+	<!-- Ensure <products> exists (only if missing) -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/RecipeDef[
+			recipeUsers/li="DMS_Furnace"
+			or recipeUsers/li="DMS_ReactionChamber"
+			or recipeUsers/li="DMS_TableMachinePrinter"
+		]/products</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs/RecipeDef[
+				recipeUsers/li="DMS_Furnace"
+				or recipeUsers/li="DMS_ReactionChamber"
+				or recipeUsers/li="DMS_TableMachinePrinter"
+			]</xpath>
+			<value>
+				<products />
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- Add the byproduct (unconditional; since none already add wastepacks) -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RecipeDef[
+			recipeUsers/li="DMS_Furnace"
+			or recipeUsers/li="DMS_ReactionChamber"
+			or recipeUsers/li="DMS_TableMachinePrinter"
+		]/products</xpath>
+		<value>
+			<Wastepack>1</Wastepack>
+		</value>
+	</Operation>
+
+	
+</Patch>
