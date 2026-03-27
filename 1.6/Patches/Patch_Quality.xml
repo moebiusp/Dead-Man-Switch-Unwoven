@@ -11,8 +11,6 @@
 		</match>
 	</Operation>
 
-<Patch>
-
 <!-- Force all DMS_Armor-tagged apparel to inherit from a no-quality base -->
 	<Operation Class="PatchOperationAttributeSet">
 		<xpath>Defs/ThingDef[tradeTags/li="DMS_Armor"]</xpath>
