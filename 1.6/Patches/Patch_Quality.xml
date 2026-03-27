@@ -1,362 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+<!-- DMS melee weapons inherit from BaseMeleeWeapon_Sharp_Quality (quality via parent) -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ThingDef[(defName="DMS_StunBaton" or defName="DMS_Machete") and @ParentName="BaseMeleeWeapon_Sharp_Quality"]</xpath>
+		<match Class="PatchOperationAttributeSet">
+			<xpath>Defs/ThingDef[defName="DMS_StunBaton" or defName="DMS_Machete"]</xpath>
+			<attribute>ParentName</attribute>
+			<value>BaseMeleeWeapon_Sharp</value>
+		</match>
+	</Operation>
 
 <Patch>
 
-<!-- A) Remove CompQuality from any DMS ThingDef that defines it directly -->
-
-<Operation Class="PatchOperationRemove">
-
-<xpath>Defs/ThingDef[starts-with(defName, "DMS_")]/comps/li[compClass="CompQuality"]</xpath>
-
-</Operation>
-
-<!-- B) DMS melee weapons inherit from BaseMeleeWeapon_Sharp_Quality (quality via parent),
-
-so we re-define them with a non-quality parent. -->
-
-<Operation Class="PatchOperationReplace">
-
-<xpath>Defs/ThingDef[defName="DMS_StunBaton"]</xpath>
-
-<value>
-
-<ThingDef ParentName="BaseMeleeWeapon_Sharp">
-
-<defName>DMS_StunBaton</defName>
-
-<label>Stun Baton</label>
-
-<description>An electric stun baton designed for non-lethal riot control and to Subdue out-of-control machines. It's commonly used by automatroid protectors to secure occupied areas safely without casualties.</description>
-
-<graphicData>
-
-<texPath>Things/Weapons/DMS_StunBaton</texPath>
-
-<graphicClass>Graphic_Single</graphicClass>
-
-</graphicData>
-
-<techLevel>Industrial</techLevel>
-
-<weaponTags>
-
-<li>A_RC</li>
-
-<li>A_RC_Melee</li>
-
-<li>DMS_MeleeWeapon</li>
-
-</weaponTags>
-
-<statBases>
-
-<WorkToMake>25000</WorkToMake>
-
-<Mass>2</Mass>
-
-</statBases>
-
-<equippedAngleOffset>-65</equippedAngleOffset>
-
-<tools>
-
-<li>
-
-<label>handle</label>
-
-<capacities>
-
-<li>Blunt</li>
-
-</capacities>
-
-<power>5</power>
-
-<cooldownTime>1.5</cooldownTime>
-
-<extraMeleeDamages>
-
-<li>
-
-<def>Stun</def>
-
-<amount>5</amount>
-
-</li>
-
-</extraMeleeDamages>
-
-</li>
-
-<li>
-
-<label>point</label>
-
-<capacities>
-
-<li>Blunt</li>
-
-</capacities>
-
-<power>10</power>
-
-<cooldownTime>2.2</cooldownTime>
-
-<extraMeleeDamages>
-
-<li>
-
-<def>EMP</def>
-
-<amount>18</amount>
-
-</li>
-
-<li>
-
-<def>Burn</def>
-
-<amount>5</amount>
-
-</li>
-
-<li>
-
-<def>Stun</def>
-
-<amount>4</amount>
-
-</li>
-
-</extraMeleeDamages>
-
-</li>
-
-<li>
-
-<label>edge</label>
-
-<capacities>
-
-<li>Blunt</li>
-
-</capacities>
-
-<power>8</power>
-
-<cooldownTime>2</cooldownTime>
-
-<extraMeleeDamages>
-
-<li>
-
-<def>EMP</def>
-
-<amount>18</amount>
-
-</li>
-
-<li>
-
-<def>Stun</def>
-
-<amount>6</amount>
-
-</li>
-
-</extraMeleeDamages>
-
-</li>
-
-</tools>
-
-<costList>
-
-<Polyester>20</Polyester>
-
-<Tungsteel>35</Tungsteel>
-
-<ComponentStamped>2</ComponentStamped>
-
-</costList>
-
-<recipeMaker>
-
-<researchPrerequisites>
-
-<li>DMS_EquipmentAdvanced</li>
-
-</researchPrerequisites>
-
-<skillRequirements>
-
-<Crafting>4</Crafting>
-
-</skillRequirements>
-
-</recipeMaker>
-
-</ThingDef>
-
-</value>
-
-</Operation>
-
-<Operation Class="PatchOperationReplace">
-
-<xpath>Defs/ThingDef[defName="DMS_Machete"]</xpath>
-
-<value>
-
-<ThingDef ParentName="BaseMeleeWeapon_Sharp">
-
-<defName>DMS_Machete</defName>
-
-<label>Machete</label>
-
-<description>It May look like a normal machete, but this weapon is purpose built for a mech melee combat capability.
-
-With its high frequency vibrating edge, it can cut through most things with ease.</description>
-
-<graphicData>
-
-<texPath>Things/Weapons/DMS_Machete</texPath>
-
-<graphicClass>Graphic_Single</graphicClass>
-
-</graphicData>
-
-<techLevel>Industrial</techLevel>
-
-<weaponTags>
-
-<li>DMS_MeleeWeapon</li>
-
-<li>A_Cut_Melee</li>
-
-</weaponTags>
-
-<statBases>
-
-<WorkToMake>35000</WorkToMake>
-
-<Mass>2</Mass>
-
-</statBases>
-
-<equippedAngleOffset>-65</equippedAngleOffset>
-
-<tools>
-
-<li>
-
-<label>handle</label>
-
-<capacities>
-
-<li>Blunt</li>
-
-</capacities>
-
-<power>9</power>
-
-<cooldownTime>2</cooldownTime>
-
-</li>
-
-<li>
-
-<label>point</label>
-
-<capacities>
-
-<li>Stab</li>
-
-</capacities>
-
-<power>23</power>
-
-<armorPenetration>0.55</armorPenetration>
-
-<cooldownTime>2.6</cooldownTime>
-
-</li>
-
-<li>
-
-<label>edge</label>
-
-<capacities>
-
-<li>Cut</li>
-
-</capacities>
-
-<power>23</power>
-
-<armorPenetration>0.55</armorPenetration>
-
-<cooldownTime>2.6</cooldownTime>
-
-</li>
-
-</tools>
-
-<costList>
-
-<Tungsteel>90</Tungsteel>
-
-<ComponentStamped>3</ComponentStamped>
-
-</costList>
-
-<recipeMaker>
-
-<researchPrerequisites>
-
-<li>LongBlades</li>
-
-<li>DMS_EquipmentElite</li>
-
-</researchPrerequisites>
-
-<skillRequirements>
-
-<Crafting>8</Crafting>
-
-</skillRequirements>
-
-</recipeMaker>
-
-<modExtensions>
-
-<li Class="Fortified.HeavyEquippableExtension">
-
-<EquippableDef>StandardAutomatroid</EquippableDef>
-
-</li>
-
-</modExtensions>
-
-</ThingDef>
-
-</value>
-
-</Operation>
-
-
-<!--
-    Remove quality ONLY from DMS armor (exclude all DMS_Clothing items).
-    This keeps quality on uniforms/coats/cloaks/etc that are tagged DMS_Clothing.
--->
-	<!-- Remove quality by forcing DMS_Armor to inherit from a no-quality apparel base -->
+<!-- Force all DMS_Armor-tagged apparel to inherit from a no-quality base -->
 	<Operation Class="PatchOperationAttributeSet">
 		<xpath>Defs/ThingDef[tradeTags/li="DMS_Armor"]</xpath>
 		<attribute>ParentName</attribute>
 		<value>ApparelNoQualityBase</value>
 	</Operation>
 
-	<!-- Only remove CompQuality when it actually exists (prevents "PatchOperationRemove ... failed") -->
+	<!-- Remove CompQuality only when present -->
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[tradeTags/li="DMS_Armor"]/comps/li[compClass="CompQuality"]</xpath>
 		<match Class="PatchOperationRemove">
@@ -364,13 +28,12 @@ With its high frequency vibrating edge, it can cut through most things with ease
 		</match>
 	</Operation>
 
-	<!-- Only remove CompProperties_Quality when it actually exists -->
+	<!-- Remove CompProperties_Quality only when present -->
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ThingDef[tradeTags/li="DMS_Armor"]/comps/li[@Class="CompProperties_Quality"]</xpath>
 		<match Class="PatchOperationRemove">
 			<xpath>Defs/ThingDef[tradeTags/li="DMS_Armor"]/comps/li[@Class="CompProperties_Quality"]</xpath>
 		</match>
 	</Operation>
-
 
 </Patch>
