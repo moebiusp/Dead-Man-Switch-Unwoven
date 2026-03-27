@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- =========================
+	     REFURB: Tactical Vest
+	     ========================= -->
+	<RecipeDef>
+		<defName>DMS_Refurbish_TacticalVest</defName>
+		<label>refurbish tactical vest</label>
+		<description>Disassemble and rebuild the item, returning a fully refurbished copy.</description>
+
+		<workAmount>5000</workAmount>
+		<workSkill>Crafting</workSkill>
+		<effectWorking>ConstructMetal</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>DMS_Apparel_TacticalVest</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentStamped</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+
+		<products>
+			<DMS_Apparel_TacticalVest>1</DMS_Apparel_TacticalVest>
+		</products>
+
+		<recipeUsers> 
+			<li>DMS_TableMachinePrinter</li>
+		</recipeUsers>
+	</RecipeDef>
+
+<!-- =========================
+
+REFURB: Powered Exoskeletal Unit
+
+defName: DMS_Apparel_PowerSkeleton
+
+========================= -->
+
+<RecipeDef>
+
+<defName>DMS_Refurbish_PowerSkeleton</defName>
+
+<label>refurbish powered exoskeleton</label>
+
+<description>Disassemble and rebuild the item, returning a fully refurbished copy.</description>
+
+<workAmount>8000</workAmount>
+
+<workSkill>Crafting</workSkill>
+
+<effectWorking>ConstructMetal</effectWorking>
+
+<soundWorking>Recipe_Machining</soundWorking>
+
+<ingredients>
+
+<li>
+
+<filter>
+
+<thingDefs>
+
+<li>DMS_Apparel_PowerSkeleton</li>
+
+</thingDefs>
+
+</filter>
+
+<count>1</count>
+
+</li>
+
+<li>
+
+<filter>
+
+<thingDefs>
+
+<li>ComponentStamped</li>
+
+</thingDefs>
+
+</filter>
+
+<count>1</count>
+
+</li>
+
+</ingredients>
+
+<products>
+
+<DMS_Apparel_PowerSkeleton>1</DMS_Apparel_PowerSkeleton>
+
+</products>
+
+<recipeUsers>
+
+<li>DMS_Furnace</li>
+
+<li>DMS_ReactionChamber</li>
+
+<li>DMS_TableMachinePrinter</li>
+
+</recipeUsers>
+
+</RecipeDef>
+
+</Defs>
