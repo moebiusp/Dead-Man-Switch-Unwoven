@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-	<!-- Allow traders to SELL this item -->
+	<!-- Allow traders to SELL Nuclear Battery -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DMS_NuclearBattery"]/tradeability</xpath>
 		<value>
@@ -16,12 +16,20 @@
 			<xpath>Defs/TraderKindDef[defName="DMS_Base_Army_Standard"]/stockGenerators</xpath>
 			<value>
 				<li Class="StockGenerator_SingleDef">
-					<!-- MUST be the exact ThingDef defName that exists -->
 					<thingDef>DMS_NuclearBattery</thingDef>
 					<countRange>1~2</countRange>
 				</li>
 			</value>
 		</match>
 	</Operation>
+
+    <!-- DMS Tribute collector no longer buys slaves/prisoners -->
+	<Operation Class="PatchOperationConditional">
+	    <xpath>Defs/StatDef[defName="RoyalFavorValue"]</xpath>
+	    <match Class="PatchOperationRemove">
+	      <xpath>Defs/TraderKindDef[defName="DMS_Caravan_TributeCollector"]/stockGenerators/li[@Class="StockGenerator_BuySlaves"]</xpath>
+	    </match>
+	</Operation>
+
 
 </Patch>
