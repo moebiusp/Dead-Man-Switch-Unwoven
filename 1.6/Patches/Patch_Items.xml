@@ -31,5 +31,40 @@
 	    </match>
 	</Operation>
 
+	<!-- Replace the awful and of bad taste gene for something more useful and sensible -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="DMS_Wetware"]</xpath>
+			<value>
+			  <GeneDef>
+			    <defName>DMS_Wetware</defName>
+			    <label>wetware interface</label>
+			    <labelShortAdj>wetware</labelShortAdj>
+			    <description>
+				Neural tissue has reorganized into dense wetware optimized for computation and machine interfacing.
+				Boosts mental output and mechanitor capacity.
+			    </description>
+
+			    <!-- Intentionally removed to eliminate the original custom behavior -->
+			    <!-- <geneClass>DMS.Gene_Wetware</geneClass> -->
+
+			    <iconPath>UI/Gene/Gene_Wetware</iconPath>
+			    <displayOrderInCategory>80</displayOrderInCategory>
+
+			    <biostatMet>-3</biostatMet>
+
+			    <statFactors>
+			      <ResearchSpeed>1.20</ResearchSpeed>
+			      <GlobalLearningFactor>1.10</GlobalLearningFactor>
+			      <RestFallRateFactor>0.90</RestFallRateFactor>
+			    </statFactors>
+
+			    <statOffsets>
+			      <MechBandwidth>6</MechBandwidth>
+			      <MechControlGroups>1</MechControlGroups>
+			    </statOffsets>
+
+			  </GeneDef>
+			</value>
+	</Operation>
 
 </Patch>
