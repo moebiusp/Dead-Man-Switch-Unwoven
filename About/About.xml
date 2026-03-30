@@ -13,23 +13,35 @@
       <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3121742525</steamWorkshopUrl>
     </li>
   </modDependencies>
-  <description> This is mod is in pre-beta, a series of personal experiments that may or may not evolve to a proper something. Subscribe at your own risk! 
+  <description> This mod is in its early stages, a series of personal experiments that may or may not evolve into a proper something. Subscribe at your own risk! 
 
-    Rebalance for Dead Man's Switch and some of its submods. 
+    Vision
 
-    - Removes quality variance from weapons and armor (but not some apparels) 
-    - Add Refurbishment recipe for repairing the weapons and armor above mentioned
-    - Add waste generation to all automated buildings
-    - Add Nuclear Battery to some traders (instead of rare loot only)
+A grittier DMS universe. Harder, but not through bullet sponges or loss of QoL. The challenge comes from simplifying some aspects and deeper integration with submods and DLCs.
+
+    Lore Rationale
+
+The Colonial Fleet's greatest achievement is its standardization. Centuries of production across countless worlds have refined their technology into a unified, predictable system.
+
+    Features 
+
+    - Removes quality variance from all dragoon modules, DMS melee weapons and armor (but not from clothing) 
+    - Adds Refurbishment recipe for repairing the weapons and armor above mentioned
+    - Adds waste generation to all automated buildings
+    - Removes DMS tribute collector exchange of prisoners for honor. I'm working on mechanisms for exchanging dead mechs for honor instead
+    - Replaces the DMS Wetware gene feature (of extreme bad taste) for more sensible mental (learning, research, rest) and mechanitor bonuses
+    - Adds Nuclear Battery to some traders (instead of rare loot only)
 
     Roadmap
+    
     - Improve recipes and research
     - Hide redundant items
+    - Deeper integration between DMS core and its submods and the DLCs
     - New Ideology
     - Several improvements to Dragoons and Ancients
     - A LOT more
 
-  ALl silly lil xml patches coded by me
+  All silly lil xml patches coded by me.
   DMS is an amazing series of mods, all credits to Aoba and team.
 
   </description>
