@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- Override: Wetware gene text -->
+  <DMS_Wetware.label>wetware interface</DMS_Wetware.label>
+
+  <DMS_Wetware.description>
+Neural tissue has reorganized into dense wetware optimized for computation and machine interfacing.
+Boosts research output and mechanitor capacity.
+  </DMS_Wetware.description>
+
+  <DMS_Wetware.labelShortAdj>wetware</DMS_Wetware.labelShortAdj>
+
+</LanguageData>
